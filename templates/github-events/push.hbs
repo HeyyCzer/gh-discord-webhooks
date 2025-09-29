@@ -1,0 +1,14 @@
+---
+title: [{{repository.name}}] {{commits.length}} {{plural commits.length "commit" "commits"}}
+color: 0x6E5494
+url: {{compare}}
+author: '{ "name": "{{pusher.name}}", "icon_url": "https://github.com/{{pusher.name}}.png", "url": "https://github.com/{{pusher.name}}" }'
+timestamp: {{head_commit.timestamp}}
+---
+
+{{#each (arraySlice commits 0 10)}}
+{{> commit}}
+{{/each}}
+{{#if (gt commits.length 10)}}
+_and {{minus commits.length 10}} more..._
+{{/if}}
