@@ -6,6 +6,7 @@ author: '{ "name": "{{pusher.name}}", "icon_url": "https://github.com/{{pusher.n
 timestamp: {{head_commit.timestamp}}
 ---
 
+-# Branch `{{replace ref "refs/heads/" ""}}`
 {{#each (arraySlice commits 0 10)}}
 {{> commit}}
 {{/each}}

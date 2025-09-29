@@ -145,6 +145,11 @@ export class TemplateService {
 			return a <= b;
 		});
 
+		Handlebars.registerHelper('replace', function (str, search, replace) {
+			if (!str) return '';
+			return str.replace(search, replace);
+		});
+
 		Handlebars.registerHelper('plural', function (count, singular, plural) {
 			return count === 1 ? singular : plural;
 		});
